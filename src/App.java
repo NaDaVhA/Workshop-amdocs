@@ -18,6 +18,8 @@ import com.github.sarxos.webcam.WebcamPanel;
 
 
 
+//jhkjh
+
 public class App {
 	public static final String MEDIADIR = "media/";
 	public static final int WIDTH=800;
