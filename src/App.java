@@ -1,4 +1,7 @@
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -7,20 +10,25 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.SwingUtilities;
+import javax.swing.border.Border;
 
 import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 
 
 
-//jhkjh
-
 public class App {
+	public static final String IMGFORMAT = "jpg";
 	public static final String MEDIADIR = "media/";
 	public static final int WIDTH=800;
 	public static final int HEIGHT=600;
@@ -34,8 +42,9 @@ public class App {
 		
 		SwingUtilities.invokeLater(new Runnable() {
             public void run() {
+            	
             	initAll();
-                startGui(); 
+                startGui();
             }
         });	
 		
@@ -43,12 +52,10 @@ public class App {
 	
 	private static void initAll(){
 		CAMERAS = new Camera[CAMNUM];
-		CAMERAS[0] = new WCamera(Webcam.getDefault(), new Dimension(640,480),"png");
+		CAMERAS[0] = new WCamera(Webcam.getDefault(), new Dimension(640,480),IMGFORMAT);
 		
 	}
-	public static JFrame addFrame(){
-		return new JFrame();
-	}
+
 	public static void startGui(){
 		
 		
@@ -63,6 +70,7 @@ public class App {
 	}
 	
 	public static boolean isImage(String name){
+		if (name== null)return false;
 		String type = name.substring(name.length() - 3);
 		if (type.equals("png")||type.equals("jpg")||type.equals("JPG"))return true;
 		else return false;
@@ -83,4 +91,29 @@ public class App {
 		}
 		return null;
 	}
+	
+	
+	
+	public static MesPanel getSafeSharePanel(){
+		Button[] buttons = new Button[2];
+		buttons[0] = new Button(304,189,177,30,"UI/notdriver.png","UI/notdriverP.png");
+		buttons[1] = new Button(115,189,177,30,"UI/share.png","UI/shareP.png");
+		MesPanel ret = new MesPanel(0,0,500,240,"UI/safeshare.png",buttons);
+		return ret;
+	}
+	
+	public static MesPanel getSafeEditPanel(){
+		Button[] buttons = new Button[1];
+		buttons[0] = new Button(304,189,177,30,"UI/notdriver.png","UI/notdriverP.png");
+		MesPanel ret = new MesPanel(0,0,500,240,"UI/safeedit.png",buttons);
+		return ret;
+	}
+	
+	
 }
+
+
+
+
+
+

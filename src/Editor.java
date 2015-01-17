@@ -12,7 +12,7 @@ public class Editor {
 	
 public static BufferedImage brightness(BufferedImage img, int x){
 		
-		BufferedImage ret=new BufferedImage(img.getWidth(), img.getHeight(), img.getType());;
+		BufferedImage ret=new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);;
 		
 		if (x==0){
 			Scalr.OP_DARKER.filter(img, ret);
@@ -29,7 +29,7 @@ public static BufferedImage marble(BufferedImage img){
 	BufferedImage ret;
 	
 	try{
-		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		MarbleFilter  filter = new MarbleFilter ();
 		filter.filter(img, ret);
 		return ret;
@@ -47,7 +47,7 @@ public static BufferedImage solaris(BufferedImage img){
 	BufferedImage ret;
 	
 	try{
-		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		SolarizeFilter filter = new SolarizeFilter();
 		filter.filter(img, ret);
 		return ret;
@@ -66,7 +66,7 @@ public static BufferedImage invert(BufferedImage img){
 	BufferedImage ret;
 	
 	try{
-		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		InvertFilter filter = new InvertFilter();
 		filter.filter(img, ret);
 		return ret;
@@ -84,7 +84,7 @@ public static BufferedImage grayscale(BufferedImage img){
 	BufferedImage ret;
 	
 	try{
-		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_INT_ARGB);
+		ret = new BufferedImage(img.getWidth(), img.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
 		GrayscaleFilter filter = new GrayscaleFilter();
 		filter.filter(img, ret);
 		return ret;

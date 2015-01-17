@@ -115,7 +115,7 @@ private static void setButtons(){
 	 				
 	 				(new Thread(new Runnable(){
 		 				 public void run() {
-		 					final String filename = App.MEDIADIR + App.MEDNAME + App.currImgNum + ".png";
+		 					final String filename = App.MEDIADIR + App.MEDNAME + App.currImgNum + "."+App.IMGFORMAT;
 			 				int ret =App.CAMERAS[j].capturePic(filename);
 			 				if (ret==1){
 			 					updatePics();
@@ -200,6 +200,38 @@ private static void setButtons(){
  			
  					
  			}});
+ 	
+ 	for (int i=0;i<NUMPICS;i++){
+ 		final int j=i;
+ 		picsB[i].addMouseListener(new MouseAdapter(){
+ 			@Override
+ 	         public void mouseClicked(MouseEvent e) {
+ 				if (App.isImage(picsB[j].getMed())){
+ 					
+ 					(new Thread(new Runnable(){
+		 				 public void run() {
+		 					 PicDisplay.display(picsB[j].getMed());
+		 					/*JFrame f = new JFrame();
+		 					PicDisplay.PicDisplayPanel display = new PicDisplay(picsB[j].getMed()).getPanel();
+		 					f.add(display);
+		 					f.setResizable(false);
+		 					f.pack();
+		 					f.setVisible(true);*/
+		 				 }
+		 			})).start();
+ 					
+ 					
+ 					/*final EditorUi edit = new EditorUi(picsB[j].getMed());
+ 					(new Thread(new Runnable(){
+		 				 public void run() {
+		 					edit.edit();
+		 				 }
+		 			})).start();*/
+ 					
+ 				}
+ 			}
+ 		});
+ 	}
 }
 
 public static void updatePics(){

@@ -27,6 +27,10 @@ public class PicsButton extends Button{
 		
 	}
 	
+	public String getMed(){
+		return mediaPic;
+	}
+	
 	public void showPlay(boolean b){
 		if (b)play.setIcon(MainScreen.getPlayIcon());
 		else play.setIcon(null);

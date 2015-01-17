@@ -78,7 +78,7 @@ public class WCamera extends Camera{
 		
 		setButonns();
 
-		final JFrame f = App.addFrame();
+		final JFrame f = new JFrame();
 		
 		panel.start();
 		f.add(panel);
