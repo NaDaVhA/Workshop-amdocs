@@ -38,7 +38,12 @@ public class PostUI {
     		@Override
 	         public void mouseClicked(MouseEvent e) {
     			p.getButtons()[0].press();
-    			share(path,network,text.getText());
+    			(new Thread(new Runnable(){
+		 				 public void run() {
+		 					share(path,network,text.getText());
+		 				 }
+		 			})).start();
+    			
     			new java.util.Timer().schedule( 
 				        new java.util.TimerTask() {
 				            @Override
