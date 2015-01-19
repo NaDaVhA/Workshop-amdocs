@@ -36,7 +36,6 @@ public class PicDisplay {
 		PicDisplayPanel panel = dis.getPanel();
 		dis.frame = new JFrame();
 		dis.frame.add(panel);
-		dis.frame.setResizable(false);
 		dis.frame.pack();
 		dis.frame.setVisible(true);
 	}
@@ -93,7 +92,7 @@ public class PicDisplay {
    					 });
    					
    					 f.add(p);
-   					 f.setResizable(false);
+   					
    					 f.pack();
    					 f.setVisible(true);
    					 
@@ -140,7 +139,7 @@ public class PicDisplay {
    						}
    					 });
    					 f.add(p);
-   					 f.setResizable(false);
+   					 
    					 f.pack();
    					 f.setVisible(true);
    					 

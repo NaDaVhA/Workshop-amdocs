@@ -76,11 +76,11 @@ public class PostUI {
 	
 	public static void share(String path, String network, String post){
 		if (App.isImage(path)){
-			if (network.equals(FACEBOOK))sharePhotoOnFacebook(path, post);
+			if (network.equals(FACEBOOK))FacebookUpload.sharePhotoOnFacebook(path, post);
 	    	
 		}
-		else{
-			if (network.equals(FACEBOOK))shareVideoOnFacebook(path, post);
+		/**else{
+			if (network.equals(FACEBOOK))FacebookUpload.shareVideoOnFacebook(path, post);
 			else if (network.equals(YOUTUBE)){
 				String title = null;
 				String content=null;
@@ -90,24 +90,12 @@ public class PostUI {
 					title = str[0];
 					if (str.length >=2)content=str[1];
 				}
-				shareVideoOnYoutube(path, title,content);
+				shareVideoOnYoutube(path, title,content); 
 			}
-		}
+		}**/
 	}
 	
 	
-	//to delete
-	private static void sharePhotoOnFacebook(String pathToPhoto, String status){
-		System.out.println(pathToPhoto+" | " + status);
-	}
-
-	private static void shareVideoOnFacebook(String pathToVideo, String status){
-		System.out.println(pathToVideo+" | " + status);
-	}
-
-	private static void shareVideoOnYoutube(String pathToVideo, String videoTitle, String videoDescription){
-		System.out.println(pathToVideo+" | " + videoTitle+ " | " +videoDescription);
-	}
 	
 }
 

@@ -72,7 +72,9 @@ public class MainScreen{
 	 	down = new Button(289,567,31,32,"UI/downUP.png","UI/downP.png");
 	 	camsB = new Button[App.CAMNUM];
 	 	picsB = new PicsButton[NUMPICS];
-	 	camsB[0] = new Button(479,215,165,82,"UI/cam1UP.png","UI/cam1P.png");
+	 	for (int i=0; i< App.CAMNUM;i++){
+	 		camsB[i] = new Button(479,215 + i*173,165,82,"UI/cam"+(i+1)+"UP.png","UI/cam"+(i+1)+"P.png");
+	 	}
 	 	for (int i=0; i<NUMPICS;i++){
 	 		picsB[i] = new PicsButton(33,6+(i*148),221,141,null,null);
 	 	}

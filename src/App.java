@@ -23,7 +23,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import com.github.sarxos.webcam.Webcam;
-import com.github.sarxos.webcam.WebcamPanel;
+
 
 
 
@@ -53,6 +53,7 @@ public class App {
 	private static void initAll(){
 		CAMERAS = new Camera[CAMNUM];
 		CAMERAS[0] = new WCamera(Webcam.getDefault(), new Dimension(640,480),IMGFORMAT);
+	if (CAMNUM>1)CAMERAS[1]= new GoProCamera("Nadav2471987");
 		
 	}
 
@@ -61,8 +62,7 @@ public class App {
 		
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.add(new MainScreen().getPanel());
-		frame.setResizable(false);	        
+		frame.add(new MainScreen().getPanel());       
 		frame.pack();
 		frame.setVisible(true); 
 
@@ -72,7 +72,7 @@ public class App {
 	public static boolean isImage(String name){
 		if (name== null)return false;
 		String type = name.substring(name.length() - 3);
-		if (type.equals("png")||type.equals("jpg")||type.equals("JPG"))return true;
+		if (type.equals("png")||type.equals("jpg")||type.equals("JPG")|| type.equals("peg"))return true;
 		else return false;
 	}
 	

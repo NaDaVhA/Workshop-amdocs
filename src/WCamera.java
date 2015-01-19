@@ -54,6 +54,7 @@ public class WCamera extends Camera{
 		cam.open();
 		try {
 			ImageIO.write(cam.getImage(), captureFormat, new File(path));
+			//WriteExifMetadata.updateExifMetadata(path);
 		} catch (IOException e) {
 			
 			return 0;

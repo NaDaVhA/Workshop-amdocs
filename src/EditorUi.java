@@ -59,9 +59,9 @@ public class EditorUi {
 		f.add(p);
 		f.pack();
 		setButtons();
-		f.setResizable(false);
 		cropRect.setVisible(false);
-		
+		adjustLabel.setVisible(true);
+		filterLabel.setVisible(false);
 		f.setVisible(true);
 	}
 	
