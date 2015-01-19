@@ -126,12 +126,20 @@ public class GoProCamera extends Camera {
 	@Override
 	public int capturePic(String path) {
 		// TODO Auto-generated method stub
+		changeMode(1);
+		startCapture();
+		//no need to stop this is only pic
 		return 0;
 	}
 
 	@Override
 	public int captureVid(String path) {
 		// TODO Auto-generated method stub
+		changeMode(0);
+		startCapture();
+		//need to stop capture....
+		Thread.sleep(3000); //wait 3 seconds
+		stopCapture();
 		return 0;
 	}
 	
