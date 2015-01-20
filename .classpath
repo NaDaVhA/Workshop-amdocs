@@ -71,5 +71,6 @@
 	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput-windows-x86.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput-windows-x86_64.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/youtube-cmdline-uploadvideo-sample"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

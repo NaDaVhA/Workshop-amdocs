@@ -35,7 +35,8 @@ public class App {
 	public static final int CAMNUM = 1;
 	public static Camera[] CAMERAS;
 	public static int currImgNum;
-	public static final String MEDNAME="DAC";	
+	public static final String MEDNAME="DAC";
+	public static User currUser;	
 	
 	
 	public static void main(String[] args) {
@@ -53,7 +54,8 @@ public class App {
 	private static void initAll(){
 		CAMERAS = new Camera[CAMNUM];
 		CAMERAS[0] = new WCamera(Webcam.getDefault(), new Dimension(640,480),IMGFORMAT);
-	if (CAMNUM>1)CAMERAS[1]= new GoProCamera("Nadav2471987");
+		if (CAMNUM>1)CAMERAS[1]= new GoProCamera("Nadav2471987");
+		currUser = new User();
 		
 	}
 

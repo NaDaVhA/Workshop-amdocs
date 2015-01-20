@@ -4,8 +4,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
+
+import org.apache.sanselan.ImageReadException;
+import org.apache.sanselan.ImageWriteException;
+import org.json.simple.parser.ParseException;
 
 import com.restfb.BinaryAttachment;
 import com.restfb.DefaultFacebookClient;
@@ -13,7 +15,6 @@ import com.restfb.FacebookClient;
 import com.restfb.FacebookClient.AccessToken;
 import com.restfb.Parameter;
 import com.restfb.types.FacebookType;
-import com.restfb.types.Page;
 
 
 public class FacebookUpload {
@@ -36,6 +37,7 @@ public class FacebookUpload {
 	
 	
 	
+	@SuppressWarnings("deprecation")
 	static int sharePhotoOnFacebook(String photoPath,String facebookMessage){
 		FacebookClient facebookClient = initFacebookUser();
 		InputStream is;
@@ -45,12 +47,22 @@ public class FacebookUpload {
 			e.printStackTrace();
 			return -1;
 		}
-		@SuppressWarnings("deprecation")
+
+		if(facebookMessage==null){
+			File photoFile = new File(photoPath);
+			try {
+				facebookMessage=WriteExifMetadata.readExifMetadata(photoFile);
+			} catch (ImageReadException | ImageWriteException | IOException
+					| ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		@SuppressWarnings("unused")
 		FacebookType publishPhotoResponse =facebookClient.publish("me/photos",FacebookType.class,
 		            BinaryAttachment.with(photoPath, is),
 		            Parameter.with("message", facebookMessage));
 	
-		System.out.println("Published photo ID: " + publishPhotoResponse.getId());
 		return 1;
 
 

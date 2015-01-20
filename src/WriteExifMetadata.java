@@ -35,8 +35,7 @@ import org.json.simple.parser.ParseException;
 
 public class WriteExifMetadata{
 	
-	private static String USERID =new String("ID12345");
-	private static String CARID =new String("ID12345");
+	
 	private static String APIGOOGLEKEY="AIzaSyCYAR421GeEuVwbvkkfrX3HBY8iMjny-eQ";
     /**
      * add/update EXIF metadata in a JPEG file.
@@ -49,12 +48,11 @@ public class WriteExifMetadata{
      * @throws ImageReadException
      * @throws ImageWriteException
      */
-    public static void updateExifMetadata(String path)
-            throws IOException, ImageReadException, ImageWriteException{
+    public static void updateExifMetadata(String path){
     	File jpegImageFile = new File(path);
     	int index = path.indexOf(".jpg");
-    	String outputpath = path.substring(0,index-1);
-    	outputpath = outputpath + "wmd.jpeg";
+    	String outputpath = path.substring(0,index);
+    	outputpath = outputpath + "D.jpeg";
     	File dst = new File(outputpath);
     	OutputStream os = null;
         Calendar cal = Calendar.getInstance();
@@ -76,12 +74,12 @@ public class WriteExifMetadata{
             	TiffOutputDirectory exifDirectory = outputSet.getOrCreateExifDirectory();
             	
             	/*update USERID*/
-            	TiffOutputField userID = createEXIF(USERID, TiffConstants.EXIF_TAG_ARTIST, outputSet.byteOrder);
+            	TiffOutputField userID = createEXIF(App.currUser.getUserID(), TiffConstants.EXIF_TAG_ARTIST, outputSet.byteOrder);
             	exifDirectory.removeField(TiffConstants.EXIF_TAG_ARTIST);
                 exifDirectory.add(userID);
 
                  /*udapte CARID*/
-                TiffOutputField carID = createEXIF(CARID, TiffConstants.EXIF_TAG_USER_COMMENT, outputSet.byteOrder);
+                TiffOutputField carID = createEXIF(App.currUser.getCarID(), TiffConstants.EXIF_TAG_USER_COMMENT, outputSet.byteOrder);
             	exifDirectory.removeField(TiffConstants.EXIF_TAG_USER_COMMENT);
                 exifDirectory.add(carID);
                 
@@ -107,7 +105,16 @@ public class WriteExifMetadata{
             os.close();
             jpegImageFile.delete();
             os = null;
-        } finally{
+        } catch (ImageReadException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ImageWriteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally{
             if (os != null)
                 try
                 {
@@ -145,7 +152,7 @@ public class WriteExifMetadata{
        		String lat = Double.toString(jpegMetadata.getExif().getGPS().getLatitudeAsDegreesNorth());
 
        		String location = getAddressByGpsCoordinates(lng,lat);
-       		result = " userID:"+ getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_ARTIST) + 
+       		result = "userID:"+ getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_ARTIST) + 
        				 " carID:"+  getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_USER_COMMENT) + 
        				 " Time:"+ getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_DATE_TIME_ORIGINAL) + 
        				 " Location:"+location;
