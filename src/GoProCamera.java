@@ -98,11 +98,11 @@ public class GoProCamera extends Camera {
 	          }
 	          System.out.println("Created download folder:" + outputFolder);
 	        }*/
-
+	     		
 	        try {
 	        	
-	           Document doc = Jsoup.connect(webUrl).timeout(15 * 1_000).get();
-	          
+	           Document doc = Jsoup.connect(webUrl).timeout(25 * 1_000).get();
+	          System.out.println("!!qaqa");
 	          for (final Element link : doc.select("a")) {
 	            final String linkFileName = link.attr("href");
 	            if (linkFileName.endsWith(fileType)) {
@@ -125,10 +125,13 @@ public class GoProCamera extends Camera {
 	        }
 	      
 	    }
+	          
 	        }
 	        catch(Exception e){
 	        	System.out.println("exception "+e.getMessage());
 	        }
+	        
+	        
 		
 	}
 	
@@ -154,7 +157,7 @@ public class GoProCamera extends Camera {
 			changeMode(1);
 			Thread.sleep(1000);
 			startCapture();
-			Thread.sleep(1000);
+			Thread.sleep(3000);
 			downloadFiles(path,"JPG");
 			Thread.sleep(2000);//wait
 			deleteAllFile();
@@ -162,6 +165,7 @@ public class GoProCamera extends Camera {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println();
 			return 0;
 		}
 	
@@ -211,7 +215,7 @@ public class GoProCamera extends Camera {
 			//need to stop capture....
 			Thread.sleep(3000); //wait 3 seconds
 			stopCapture();
-			Thread.sleep(1500); //wait 1.5 seconds
+			Thread.sleep(3000); //wait 1.5 seconds
 			downloadFiles(path,"MP4");
 			//Thread.sleep(15000);//wait till video is downloaded
 			deleteAllFile();

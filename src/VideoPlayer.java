@@ -31,5 +31,6 @@ private JFrame player=new JFrame();
 		//shirly i this you can call play/pause with the following functions
 		//ourMediaPlayer.getMediaPlayer().play();
 		//ourMediaPlayer.getMediaPlayer().pause();
+		
 	}
 }

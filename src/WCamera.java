@@ -90,6 +90,7 @@ public class WCamera extends Camera{
 		
 		final IMediaWriter writer = ToolFactory.makeWriter(path);
 		writer.addVideoStream(0, 0, ICodec.ID.CODEC_ID_MPEG4, size.width/2, size.height/2);
+		//writer.addVideoStream(0, 0, ICodec.ID., size.width/2, size.height/2);
 		long startTime = System.nanoTime();
 		
 		f.addWindowListener(new WindowAdapter(){
