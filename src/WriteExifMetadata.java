@@ -1,21 +1,22 @@
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Calendar;
+import java.util.Properties;
 
 import org.apache.sanselan.ImageReadException;
 import org.apache.sanselan.ImageWriteException;
 import org.apache.sanselan.Sanselan;
 import org.apache.sanselan.common.IImageMetadata;
-import org.apache.sanselan.common.RationalNumber;
 import org.apache.sanselan.formats.jpeg.JpegImageMetadata;
 import org.apache.sanselan.formats.jpeg.exifRewrite.ExifRewriter;
 import org.apache.sanselan.formats.tiff.TiffField;
@@ -27,15 +28,14 @@ import org.apache.sanselan.formats.tiff.fieldtypes.FieldType;
 import org.apache.sanselan.formats.tiff.write.TiffOutputDirectory;
 import org.apache.sanselan.formats.tiff.write.TiffOutputField;
 import org.apache.sanselan.formats.tiff.write.TiffOutputSet;
-import org.apache.sanselan.util.IOUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 public class WriteExifMetadata{
-	
-	
+		
+	private static String VIDEODATAPATH = "VideoData";
 	private static String APIGOOGLEKEY="AIzaSyCYAR421GeEuVwbvkkfrX3HBY8iMjny-eQ";
     /**
      * add/update EXIF metadata in a JPEG file.
@@ -223,4 +223,91 @@ public class WriteExifMetadata{
 	        
 	    }
   
+		
+		
+		
+		
+		
+		public static void updateVideoData(String videoFileName){
+			try {
+				Calendar cal = Calendar.getInstance();
+				InputStream configFileStream = new FileInputStream(VIDEODATAPATH);
+				Properties loadedProp = new Properties();
+				loadedProp.load(configFileStream);
+				String location="";
+				String result=
+					 "userID:" + App.currUser.getUserID()+
+	   				 " carID:"+ App.currUser.getUserID() + 
+	   				 " Time:"+ cal.getTime().toString() + 
+	   				 " Location:"+location;
+   		
+				loadedProp.setProperty(videoFileName, result);
+				configFileStream.close();
+				FileOutputStream configFileStreamOut = new FileOutputStream(VIDEODATAPATH);
+				loadedProp.store(configFileStreamOut, null);
+				configFileStreamOut.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			};
+			
+			
+		
+		}
+		
+		
+		
+		
+		public static void deleteVideoData(String videoFileName){
+			try {
+				InputStream configFileStream = new FileInputStream(VIDEODATAPATH);
+				Properties loadedProp = new Properties();
+				loadedProp.load(configFileStream);
+		
+				loadedProp.remove(videoFileName);
+				configFileStream.close();
+				FileOutputStream configFileStreamOut = new FileOutputStream(VIDEODATAPATH);
+				loadedProp.store(configFileStreamOut, null);
+				configFileStreamOut.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			};
+			
+			
+		
+		}
+		
+		
+		public static String loadVideoData(String videoFileName){
+			String result=null;
+			
+			InputStream configFileStream;
+			try {
+				configFileStream = new FileInputStream(VIDEODATAPATH);
+				Properties loadedProp = new Properties();
+				loadedProp.load(configFileStream);
+				result = loadedProp.getProperty(videoFileName);
+				configFileStream.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+			
+			catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return result;
+
+		}
+		
+		
+		
 }

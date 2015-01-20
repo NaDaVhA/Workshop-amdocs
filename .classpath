@@ -72,5 +72,25 @@
 	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput-windows-x86.jar"/>
 	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput-windows-x86_64.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/youtube-cmdline-uploadvideo-sample"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/guava-18.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-client-1.13.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-http-client-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-oauth-client-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-oauth-client-java6-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-oauth-client-jetty-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/httpclient-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jackson-core-2.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jetty-6.1.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jetty-util-6.1.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jsr-305.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/servlet-api-2.5-20081211.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/xpp3-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-services-youtube-v3-rev24-1.13.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-services-youtube-v3-rev24-1.13.2-beta-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-services-youtube-v3-rev8-1.12.0-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-http-client-jackson2-1.13.1-beta.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
