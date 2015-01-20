@@ -134,7 +134,7 @@ private static void setButtons(){
 
 						@Override
 						public void run() {
-							App.CAMERAS[j].captureVid(App.MEDIADIR + App.MEDNAME + App.currImgNum + ".avi");
+							App.CAMERAS[j].captureVid(App.MEDIADIR + App.MEDNAME + App.currImgNum + ".mp4"); //nadav changed to mp4
 					    	MainScreen.updatePics();
 							App.currImgNum++;
 							
@@ -208,6 +208,7 @@ private static void setButtons(){
  		picsB[i].addMouseListener(new MouseAdapter(){
  			@Override
  	         public void mouseClicked(MouseEvent e) {
+ 				
  				if (App.isImage(picsB[j].getMed())){
  					
  					(new Thread(new Runnable(){
@@ -229,8 +230,19 @@ private static void setButtons(){
 		 					edit.edit();
 		 				 }
 		 			})).start();*/
- 					
+
  				}
+
+				//nadav added
+	 				if(App.isVideo(picsB[j].getMed())){
+	 					(new Thread(new Runnable(){
+			 				 public void run() {
+			 					VideoPlayer player=new VideoPlayer(picsB[j].getMed());
+			 					player.playVideo();
+			 				 }
+			 			})).start();
+	 				}
+
  			}
  		});
  	}

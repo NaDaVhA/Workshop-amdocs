@@ -2,95 +2,74 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/javaxt-core.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/json-simple-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/restfb-1.7.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/sanselan-0.97-incubator.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/sanselan-0.97-incubator-javadoc.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/sanselan-0.97-incubator-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/NADAV/jsoup-1.8.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/bridj-0.7-140629.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/commons-cli-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/commons-lang3-3.3.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/Filters.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/imgscalr-lib-4.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/logback-classic-1.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/logback-core-1.1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/slf4j-api-1.7.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/webcam-capture-0.3.11-20141227.105512-4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/xuggle-xuggler-5.4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-android-arm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-android-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-macosx-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/artoolkitplus-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-android-arm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-android-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-macosx-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/ffmpeg-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-android-arm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-android-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-macosx-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flandmark-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flycapture.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flycapture-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flycapture-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flycapture-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/flycapture-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/javacpp.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/javacv.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libdc1394.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libdc1394-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libdc1394-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libdc1394-macosx-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libfreenect.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libfreenect-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libfreenect-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libfreenect-macosx-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libfreenect-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/libfreenect-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-android-arm.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-android-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-linux-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-linux-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-macosx-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/opencv-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput-windows-x86.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/SHIRLYS IMPORT/javac/videoinput-windows-x86_64.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/youtube-cmdline-uploadvideo-sample"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/guava-18.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/commons.logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/commons-codec-1.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-client-1.13.2-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-http-client-1.13.1-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-oauth-client-1.13.1-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-oauth-client-java6-1.13.1-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-oauth-client-jetty-1.13.1-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/httpclient-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/httpcore-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jackson-core-2.0.5.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jetty-6.1.26.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jetty-util-6.1.26.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/jsr-305.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/servlet-api-2.5-20081211.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/xpp3-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-services-youtube-v3-rev24-1.13.2-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-services-youtube-v3-rev24-1.13.2-beta-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-api-services-youtube-v3-rev8-1.12.0-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/ariela/Desktop/Sadna/YOUUP/google-http-client-jackson2-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/commons.logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-client-1.13.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-services-youtube-v3-rev8-1.12.0-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-services-youtube-v3-rev24-1.13.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-services-youtube-v3-rev24-1.13.2-beta-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-http-client-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-http-client-jackson2-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-oauth-client-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-oauth-client-java6-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-oauth-client-jetty-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/httpclient-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/jackson-core-2.0.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/javaxt-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/jetty-6.1.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/jetty-util-6.1.26.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/jsr-305.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/restfb-1.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/sanselan-0.97-incubator.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/sanselan-0.97-incubator-javadoc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/sanselan-0.97-incubator-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/servlet-api-2.5-20081211.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/xpp3-1.1.4c.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/NADAV/jna-3.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/NADAV/jsoup-1.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/NADAV/platform-3.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/NADAV/vlcj-3.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/bridj-0.7-140629.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/commons-cli-1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/commons-lang3-3.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/Filters.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/imgscalr-lib-4.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/logback-classic-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/logback-core-1.1.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/slf4j-api-1.7.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/webcam-capture-0.3.11-20141227.105512-4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/xuggle-xuggler-5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/artoolkitplus.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/artoolkitplus-android-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/ffmpeg.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flandmark-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flandmark-macosx-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flandmark-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flandmark-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flycapture-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flycapture-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/javacv.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/libfreenect.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/libfreenect-linux-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/libfreenect-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/artoolkitplus-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/artoolkitplus-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/ffmpeg-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/ffmpeg-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flandmark.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flycapture.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/flycapture-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/javacpp.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/libdc1394.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/libfreenect-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/opencv.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/opencv-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/opencv-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/videoinput.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/videoinput-windows-x86.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/videoinput-windows-x86_64.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/guava-18.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

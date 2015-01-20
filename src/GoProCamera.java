@@ -175,7 +175,7 @@ public class GoProCamera extends Camera {
 		try {
 			//final WebcamPanel panel = new WebcamPanel(cam, size, false);
 			
-			 done=false;
+		/*	 done=false;
 			 pause=false;
 			
 			MyPanel capPanel = new MyPanel(0,0,(int)size.getWidth(),50,"UI/videoRecBack.png");
@@ -204,7 +204,7 @@ public class GoProCamera extends Camera {
 					System.out.println("closed! qaqa");
 				}
 				
-			});
+			});*/
 			changeMode(0);
 			Thread.sleep(1000); //wait 1 seconds
 			startCapture();
