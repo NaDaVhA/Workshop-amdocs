@@ -48,11 +48,9 @@ public class WriteData{
      * @throws ImageReadException
      * @throws ImageWriteException
      */
-    public static void updateExifMetadata(String path){
-    	File jpegImageFile = new File(path);
-    	String[] pathSplit = path.split("."); 
-    	String outputpath =pathSplit[0];
-    	outputpath = outputpath + "D.jpeg";
+    public static void updateExifMetadata(String mediadir , String namePhoto ,String format){
+    	File jpegImageFile = new File(mediadir+namePhoto+"."+format);
+    	String outputpath = mediadir+namePhoto + "D.jpeg";
     	File dst = new File(outputpath);
     	OutputStream os = null;
         Calendar cal = Calendar.getInstance();
@@ -170,21 +168,22 @@ public class WriteData{
     
     
     
-    public static void copyExifMetadata(File src,File dst)throws IOException, ImageReadException, ImageWriteException, ParseException{
-        IImageMetadata metadataSrc = Sanselan.getMetadata(src);
+    public static void copyExifMetadata(String srcPath,String dstPath)throws IOException, ImageReadException, ImageWriteException, ParseException{
+    	File src = new File(srcPath);
+    	File dst = new File(dstPath);
+
+    	
+    	IImageMetadata metadataSrc = Sanselan.getMetadata(src);
         JpegImageMetadata jpegMetadataSrc = (JpegImageMetadata) metadataSrc;
-	    OutputStream os = null;
-        TiffOutputSet outputSet = null;
 	    TiffImageMetadata exifSrc = jpegMetadataSrc.getExif();
-        outputSet = exifSrc.getOutputSet();
+	    TiffOutputSet outputSet = exifSrc.getOutputSet();
          
    		/*UPDAING FILE*/
-   		 os = new FileOutputStream(dst);
-   		 os = new BufferedOutputStream(os);
+        OutputStream os = new FileOutputStream(dst);
+   		os = new BufferedOutputStream(os);
    		 
-   		 new ExifRewriter().updateExifMetadataLossless(src, os,outputSet);
+   		 new ExifRewriter().updateExifMetadataLossless(dst, os,outputSet);
    		 os.close();
-   		 src.delete();
    	
     }
     
@@ -256,12 +255,12 @@ public class WriteData{
 		public static void updateVideoData(String videoFileName){
 			try {
 				Calendar cal = Calendar.getInstance();
-				InputStream configFileStream = new FileInputStream(VIDEODATAPATH);
+				InputStream configFileStream = new FileInputStream(getVIDEODATAPATH());
 				Properties loadedProp = new Properties();
 				loadedProp.load(configFileStream);
 				String location="";
 				String result=
-					 " Time:"+ cal.getTime().toString() + 
+					 "Time:"+ cal.getTime().toString() + 
 	   				 " Location:"+location+
 	   				 " Car manufacturer:"+ App.currUser.carMan();
    		
@@ -272,7 +271,7 @@ public class WriteData{
 				loadedProp.setProperty(videoFileName+"1", result2);
 
 				configFileStream.close();
-				FileOutputStream configFileStreamOut = new FileOutputStream(VIDEODATAPATH);
+				FileOutputStream configFileStreamOut = new FileOutputStream(getVIDEODATAPATH());
 				loadedProp.store(configFileStreamOut, null);
 				configFileStreamOut.close();
 			} catch (FileNotFoundException e) {
@@ -292,13 +291,13 @@ public class WriteData{
 		
 		public static void deleteVideoData(String videoFileName){
 			try {
-				InputStream configFileStream = new FileInputStream(VIDEODATAPATH);
+				InputStream configFileStream = new FileInputStream(getVIDEODATAPATH());
 				Properties loadedProp = new Properties();
 				loadedProp.load(configFileStream);
 		
 				loadedProp.remove(videoFileName);
 				configFileStream.close();
-				FileOutputStream configFileStreamOut = new FileOutputStream(VIDEODATAPATH);
+				FileOutputStream configFileStreamOut = new FileOutputStream(getVIDEODATAPATH());
 				loadedProp.store(configFileStreamOut, null);
 				configFileStreamOut.close();
 			} catch (FileNotFoundException e) {
@@ -319,7 +318,7 @@ public class WriteData{
 			
 			InputStream configFileStream;
 			try {
-				configFileStream = new FileInputStream(VIDEODATAPATH);
+				configFileStream = new FileInputStream(getVIDEODATAPATH());
 				Properties loadedProp = new Properties();
 				loadedProp.load(configFileStream);
 				result = loadedProp.getProperty(videoFileName);
@@ -335,6 +334,16 @@ public class WriteData{
 			}
 			return result;
 
+		}
+
+
+		public static String getVIDEODATAPATH() {
+			return VIDEODATAPATH;
+		}
+
+
+		public static void setVIDEODATAPATH(String vIDEODATAPATH) {
+			VIDEODATAPATH = vIDEODATAPATH;
 		}
 		
 		

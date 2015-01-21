@@ -120,8 +120,8 @@ private static void setButtons(){
 		 					final String filename = App.MEDIADIR + App.MEDNAME + App.currImgNum + "."+App.IMGFORMAT;
 			 				int ret =App.CAMERAS[j].capturePic(filename);
 			 				
-			 				//Ariela this is where i call updateExifMetadata
-			 				//WriteData.updateExifMetadata(filename);
+			 				
+			 				WriteData.updateExifMetadata(App.MEDIADIR , App.MEDNAME + App.currImgNum ,App.IMGFORMAT);
 			 				if (ret==1){
 			 					updatePics();
 			 					App.currImgNum++;
@@ -141,8 +141,8 @@ private static void setButtons(){
 							String filename = App.MEDIADIR + App.MEDNAME + App.currImgNum + ".mp4";
 							App.CAMERAS[j].captureVid(filename); //nadav changed to mp4
 							
-							//Ariela this is where i call updateExifMetadata
-							WriteData.updateVideoData(filename);
+							//Ariela 
+							WriteData.updateVideoData( App.MEDNAME + App.currImgNum+ ".mp4");
 							MainScreen.updatePics();
 							App.currImgNum++;
 							

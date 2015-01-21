@@ -107,6 +107,13 @@ public class PostUI {
 				}
 				
 				//Ariela
+				 if(title==null){
+					int index= path.indexOf("DAC");
+					String name = path.substring(index, path.length());
+			    	title= "Drive&Capture video: " +name;
+			    	System.out.println( WriteData.loadVideoData(name));
+			    	content= WriteData.loadVideoData(name);
+			     }
 				UploadVideo.shareVideoOnYoutube(path, title, content);
 			}
 		}

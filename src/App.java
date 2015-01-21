@@ -9,8 +9,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -63,7 +65,6 @@ public class App {
 	
 	private static void initAll(){
 		CAMERAS = new Camera[CAMNUM];
-		
 		/*List<Webcam> cams = Webcam.getWebcams();
 		for (int i=0; i< cams.size(); i++){
 			if ((cams.get(i)).getName().equals("Microsoft LifeCam VX-2000 0")){
@@ -74,7 +75,19 @@ public class App {
 		
 		CAMERAS[0] = new WCamera(Webcam.getDefault(), new Dimension(640,480),IMGFORMAT);
 		if (CAMNUM>1)CAMERAS[1]= new GoProCamera("Nadav2471987");
+		
+		
 		currUser = new User();
+		Properties newProp = new Properties();
+		try {
+			FileOutputStream configFileStreamOut = new FileOutputStream(WriteData.getVIDEODATAPATH());
+			newProp.store(configFileStreamOut, null);
+			configFileStreamOut.close();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 

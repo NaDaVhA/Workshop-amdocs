@@ -51,7 +51,10 @@ public class FacebookUpload {
 		if(facebookMessage==null){
 			File photoFile = new File(photoPath);
 			try {
-				facebookMessage=WriteData.readExifMetadata(photoFile);
+				int index= photoPath.indexOf("DAC");
+				String name = photoPath.substring(index, photoPath.length());
+				System.out.println(WriteData.readExifMetadata(photoFile));
+				facebookMessage= "Drive&Capture photo: " +name  + WriteData.readExifMetadata(photoFile);;
 			} catch (ImageReadException | ImageWriteException | IOException
 					| ParseException e) {
 				// TODO Auto-generated catch block
@@ -73,8 +76,8 @@ public class FacebookUpload {
 		FacebookClient facebookClient = initFacebookUser();
 		InputStream is = new FileInputStream(new File(videoPath));
 		facebookClient.publish("me/videos", FacebookType.class,
-				  BinaryAttachment.with(videoPath,is),
-				  Parameter.with("message", facebookMessage));
+				  BinaryAttachment.with(videoPath,is)
+				 );
 		
 	}
 

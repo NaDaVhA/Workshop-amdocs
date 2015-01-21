@@ -18,12 +18,16 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import org.apache.sanselan.ImageReadException;
+import org.apache.sanselan.ImageWriteException;
 import org.imgscalr.Scalr;
+import org.json.simple.parser.ParseException;
 
 
 
 public class EditorUi {
 	private String path;
+	private String original;
 	private BufferedImage temp;
 	private BufferedImage cur;
 	private JLabel displayPane = new JLabel();
@@ -55,6 +59,7 @@ public class EditorUi {
 	
 	public EditorUi(String path){
 		this.path = path;
+		original = path;
 		File img = new File(path);
 		BufferedImage buf;
 		try {
@@ -95,6 +100,13 @@ public class EditorUi {
 	 						ImageIO.write(cur, App.IMGFORMAT, output);
 	 						temp = copy(cur);
 	 						path = name;
+	 						try {
+								WriteData.copyExifMetadata(original,path);
+							} catch (ImageReadException | ImageWriteException
+									| ParseException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
 	 						MainScreen.updatePics();
 	 						App.currImgNum++;
 	 						
