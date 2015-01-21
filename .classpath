@@ -4,11 +4,10 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/commons.logging-1.1.1.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/commons-codec-1.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-client-1.13.2-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-client-1.13.2-beta.jar" sourcepath="C:/Users/Nadav/.m2/repository/com/google/api-client/google-api-client/1.13.2-beta/google-api-client-1.13.2-beta-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-services-youtube-v3-rev8-1.12.0-beta.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-services-youtube-v3-rev24-1.13.2-beta.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-api-services-youtube-v3-rev24-1.13.2-beta-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-http-client-1.13.1-beta.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-http-client-1.13.1-beta.jar" sourcepath="C:/Users/Nadav/.m2/repository/com/google/http-client/google-http-client/1.13.1-beta/google-http-client-1.13.1-beta-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-http-client-jackson2-1.13.1-beta.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-oauth-client-1.13.1-beta.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/google-oauth-client-java6-1.13.1-beta.jar"/>
@@ -70,6 +69,6 @@
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/videoinput.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/videoinput-windows-x86.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Shirly/javac/videoinput-windows-x86_64.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Nadav/git/Workshop-amdocs/Jars/Ariela/guava-18.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/youtube-cmdline-uploadvideo-sample"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

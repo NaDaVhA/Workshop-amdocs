@@ -4,7 +4,7 @@ import java.util.Random;
 public class User {
 	private String carID;
 	private String userID;
-	
+	private String carMan;
 	public User(){
 		Random rn = new Random();
 		this.setCarID("CI");
@@ -12,6 +12,8 @@ public class User {
 		for(int i=0;i<5;i++){
 			this.setCarID(this.getCarID() +Math.abs( rn.nextInt()%9)) ;
 			this.setUserID(this.getUserID() + Math.abs(rn.nextInt()%9));}
+		
+		this.carMan = "Ford";
 	}
 
 	public String getCarID() {
@@ -30,6 +32,10 @@ public class User {
 		this.userID = userID;
 	}
 	
+	
+	public String carMan() {
+		return carMan;
+	}
 	
 	
 }

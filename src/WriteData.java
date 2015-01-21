@@ -79,14 +79,19 @@ public class WriteData{
                 exifDirectory.add(userID);
 
                  /*udapte CARID*/
-                TiffOutputField carID = createEXIF(App.currUser.getCarID(), TiffConstants.EXIF_TAG_USER_COMMENT, outputSet.byteOrder);
-            	exifDirectory.removeField(TiffConstants.EXIF_TAG_USER_COMMENT);
+                TiffOutputField carID = createEXIF(App.currUser.getCarID(), TiffConstants.TIFF_TAG_COPYRIGHT, outputSet.byteOrder);
+            	exifDirectory.removeField(TiffConstants. TIFF_TAG_COPYRIGHT );
                 exifDirectory.add(carID);
                 
                 /*udapte time*/
                 TiffOutputField date = createEXIF(cal.getTime().toString(), TiffConstants.EXIF_TAG_DATE_TIME_ORIGINAL, outputSet.byteOrder);
             	exifDirectory.removeField(TiffConstants.EXIF_TAG_DATE_TIME_ORIGINAL);
                 exifDirectory.add(date);
+                
+                /*udapte care manufacturer*/
+                TiffOutputField car = createEXIF(App.currUser.carMan(), TiffConstants.EXIF_TAG_USER_COMMENT, outputSet.byteOrder);
+            	exifDirectory.removeField(TiffConstants.EXIF_TAG_USER_COMMENT);
+                exifDirectory.add(car);
                       
             	/*update location*/
                 double longitude = -74.0; // 74 degrees W (in Degrees East)
@@ -147,10 +152,10 @@ public class WriteData{
        		String lat = Double.toString(jpegMetadata.getExif().getGPS().getLatitudeAsDegreesNorth());
 
        		String location = getAddressByGpsCoordinates(lng,lat);
-       		result = "userID:"+ getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_ARTIST) + 
-       				 " carID:"+  getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_USER_COMMENT) + 
+       		result = 
        				 " Time:"+ getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_DATE_TIME_ORIGINAL) + 
-       				 " Location:"+location;
+       				 " Location:"+location +
+       				 " Car manufacturer:" + getTagValue(jpegMetadata,TiffConstants.EXIF_TAG_USER_COMMENT);
        		
 
        		
@@ -256,12 +261,16 @@ public class WriteData{
 				loadedProp.load(configFileStream);
 				String location="";
 				String result=
-					 "userID:" + App.currUser.getUserID()+
-	   				 " carID:"+ App.currUser.getUserID() + 
-	   				 " Time:"+ cal.getTime().toString() + 
-	   				 " Location:"+location;
+					 " Time:"+ cal.getTime().toString() + 
+	   				 " Location:"+location+
+	   				 " Car manufacturer:"+ App.currUser.carMan();
    		
+				
+				String result2="userID:" + App.currUser.getUserID()+
+  				 " carID:"+ App.currUser.getUserID();
 				loadedProp.setProperty(videoFileName, result);
+				loadedProp.setProperty(videoFileName+"1", result2);
+
 				configFileStream.close();
 				FileOutputStream configFileStreamOut = new FileOutputStream(VIDEODATAPATH);
 				loadedProp.store(configFileStreamOut, null);

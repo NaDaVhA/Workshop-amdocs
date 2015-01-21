@@ -9,6 +9,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.ScrollPaneConstants;
 
+import com.google.api.services.samples.youtube.cmdline.youtube_cmdline_uploadvideo_sample.UploadVideo;
+
 
 public class PostUI {
 	

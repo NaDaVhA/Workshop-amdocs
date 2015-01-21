@@ -35,7 +35,7 @@ public class App {
 	public static final String MEDIADIR = "media/";
 	public static final int WIDTH=800;
 	public static final int HEIGHT=600;
-	public static final int CAMNUM = 1; //nadav changed
+	public static final int CAMNUM = 2; //nadav changed
 	public static Camera[] CAMERAS;
 	public static int currImgNum;
 	public static final String MEDNAME="DAC";
@@ -53,7 +53,7 @@ public class App {
                 new Thread(new Runnable(){
       				 public void run() {
       					EventHandler.setEventsListeners();
-      					EventHandler.simulateEvents();
+    //  					EventHandler.simulateEvents();
       				 }
       			}).start();
             }

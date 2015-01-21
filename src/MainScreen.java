@@ -121,7 +121,7 @@ private static void setButtons(){
 			 				int ret =App.CAMERAS[j].capturePic(filename);
 			 				
 			 				//Ariela this is where i call updateExifMetadata
-			 				WriteData.updateExifMetadata(filename);
+			 				//WriteData.updateExifMetadata(filename);
 			 				if (ret==1){
 			 					updatePics();
 			 					App.currImgNum++;
@@ -206,8 +206,7 @@ private static void setButtons(){
 			 			}
 				 }
 			})).start();
- 			
- 			
+ 					
  					
  			}});
  	
@@ -216,6 +215,8 @@ private static void setButtons(){
  		picsB[i].addMouseListener(new MouseAdapter(){
  			@Override
  	         public void mouseClicked(MouseEvent e) {
+ 				//change wifi connectivity
+ 			
  				
  				if (App.isImage(picsB[j].getMed())){
  					
