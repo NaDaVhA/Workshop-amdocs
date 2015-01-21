@@ -101,7 +101,7 @@ public class EditorUi {
 	 						temp = copy(cur);
 	 						path = name;
 	 						try {
-								WriteData.copyExifMetadata(original,path);
+								WriteData.copyExifMetadata(original,App.MEDIADIR ,App.MEDNAME + App.currImgNum ,App.IMGFORMAT);
 							} catch (ImageReadException | ImageWriteException
 									| ParseException e) {
 								// TODO Auto-generated catch block

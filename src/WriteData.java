@@ -168,22 +168,31 @@ public class WriteData{
     
     
     
-    public static void copyExifMetadata(String srcPath,String dstPath)throws IOException, ImageReadException, ImageWriteException, ParseException{
+    public static void copyExifMetadata(String srcPath,String mediadir ,String namefile ,String format)throws IOException, ImageReadException, ImageWriteException, ParseException{
     	File src = new File(srcPath);
-    	File dst = new File(dstPath);
-
+    	File dst = new File( mediadir+ namefile +"."+format);
+    	String newdst =mediadir+ namefile+"D.jpeg";
+    	File finalDest = new File(newdst);
     	
     	IImageMetadata metadataSrc = Sanselan.getMetadata(src);
         JpegImageMetadata jpegMetadataSrc = (JpegImageMetadata) metadataSrc;
 	    TiffImageMetadata exifSrc = jpegMetadataSrc.getExif();
 	    TiffOutputSet outputSet = exifSrc.getOutputSet();
-         
+    	TiffOutputDirectory exifDirectory = outputSet.getOrCreateExifDirectory();
+
+	    
+	    TiffOutputField car = createEXIF(App.currUser.carMan(), TiffConstants.EXIF_TAG_USER_COMMENT, outputSet.byteOrder);
+    	exifDirectory.removeField(TiffConstants.EXIF_TAG_USER_COMMENT);
+        exifDirectory.add(car);
+        
+        
    		/*UPDAING FILE*/
-        OutputStream os = new FileOutputStream(dst);
+        OutputStream os = new FileOutputStream(finalDest);
    		os = new BufferedOutputStream(os);
    		 
    		 new ExifRewriter().updateExifMetadataLossless(dst, os,outputSet);
    		 os.close();
+   		dst.delete();
    	
     }
     
