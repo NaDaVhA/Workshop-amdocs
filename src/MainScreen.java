@@ -119,9 +119,13 @@ private static void setButtons(){
 		 				 public void run() {
 		 					final String filename = App.MEDIADIR + App.MEDNAME + App.currImgNum + "."+App.IMGFORMAT;
 			 				int ret =App.CAMERAS[j].capturePic(filename);
+			 				
+			 				//Ariela this is where i call updateExifMetadata
+			 				WriteData.updateExifMetadata(filename);
 			 				if (ret==1){
 			 					updatePics();
 			 					App.currImgNum++;
+			 					
 			 				}
 		 				 }
 		 			})).start();
@@ -134,8 +138,12 @@ private static void setButtons(){
 
 						@Override
 						public void run() {
-							App.CAMERAS[j].captureVid(App.MEDIADIR + App.MEDNAME + App.currImgNum + ".mp4"); //nadav changed to mp4
-					    	MainScreen.updatePics();
+							String filename = App.MEDIADIR + App.MEDNAME + App.currImgNum + ".mp4";
+							App.CAMERAS[j].captureVid(filename); //nadav changed to mp4
+							
+							//Ariela this is where i call updateExifMetadata
+							WriteData.updateVideoData(filename);
+							MainScreen.updatePics();
 							App.currImgNum++;
 							
 						}

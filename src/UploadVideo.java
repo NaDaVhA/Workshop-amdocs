@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 
 import com.google.api.client.auth.oauth2.Credential;
@@ -45,8 +44,7 @@ public class UploadVideo {
   /** Global instance of Youtube object to make all API requests. */
   private static YouTube youtube;
   
-  private static String VIDEOTITLE= "Drive & Capture video";
-  private static String VIDEODESCRIPTION = "";
+ 
   
   /* Global instance of the format used for the video being uploaded (MIME type). */
   private static String VIDEO_FILE_FORMAT = "video/*";
@@ -85,8 +83,9 @@ public class UploadVideo {
    *
    * @param args command line args (not used).
    */
-  public static void videoUpload(File videoFile) {
-
+  public static void shareVideoOnYoutube(String path, String title,String content) {
+	  
+	 File videoFile= new File(path);
     // Scope required to upload to YouTube.
     List<String> scopes = Lists.newArrayList("https://www.googleapis.com/auth/youtube.upload");
 
@@ -119,10 +118,13 @@ public class UploadVideo {
        * you can see multiple files being uploaded. You will want to remove this from your project
        * and use your own standard names.
        */
-      Calendar cal = Calendar.getInstance();
-      snippet.setTitle(VIDEOTITLE + " on " + cal.getTime());
-      snippet.setDescription(
-    		  VIDEODESCRIPTION + "on " + cal.getTime());
+      if(title==null){
+    	  title= "Drive&Capture video: " + path;
+    	  content= WriteData.loadVideoData(path);
+      }
+    	  snippet.setTitle(title);
+    	  snippet.setDescription(content);
+      
 
       // Set your keywords.
       List<String> tags = new ArrayList<String>();
@@ -179,15 +181,7 @@ public class UploadVideo {
       uploader.setProgressListener(progressListener);
 
       // Execute upload.
-      Video returnedVideo = videoInsert.execute();
-
-      // Print out returned results.
-      System.out.println("\n================== Returned Video ==================\n");
-      System.out.println("  - Id: " + returnedVideo.getId());
-      System.out.println("  - Title: " + returnedVideo.getSnippet().getTitle());
-      System.out.println("  - Tags: " + returnedVideo.getSnippet().getTags());
-      System.out.println("  - Privacy Status: " + returnedVideo.getStatus().getPrivacyStatus());
-      System.out.println("  - Video Count: " + returnedVideo.getStatistics().getViewCount());
+     videoInsert.execute();
 
     } catch (GoogleJsonResponseException e) {
       System.err.println("GoogleJsonResponseException code: " + e.getDetails().getCode() + " : "
@@ -202,10 +196,6 @@ public class UploadVideo {
     }
   }
 
-  
-  public static void main (String argv[]){
-	  File videoFile = new File("media/20150106_214009.mp4");
-	  videoUpload(videoFile);
-  }
+ 
 
 }

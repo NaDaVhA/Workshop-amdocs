@@ -36,6 +36,7 @@ public class PicDisplay {
 		PicDisplayPanel panel = dis.getPanel();
 		dis.frame = new JFrame();
 		dis.frame.add(panel);
+		dis.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		dis.frame.pack();
 		dis.frame.setVisible(true);
 	}
@@ -92,7 +93,7 @@ public class PicDisplay {
    					 });
    					
    					 f.add(p);
-   					
+   					 f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
    					 f.pack();
    					 f.setVisible(true);
    					 
@@ -116,7 +117,6 @@ public class PicDisplay {
    		                public void mouseClicked(MouseEvent e) {
    							p.getButtons()[0].press();
    							f.dispose();
-   							//frame.dispose();
    							
    		 					(new Thread(new Runnable(){
    				 				 public void run() {
@@ -130,7 +130,6 @@ public class PicDisplay {
    		                public void mouseClicked(MouseEvent e) {
    							p.getButtons()[0].press();
    							f.dispose();
-   							frame.dispose();
    		 					(new Thread(new Runnable(){
    				 				 public void run() {
    				 					PostUI.share(path, "facebook",null);
@@ -139,7 +138,7 @@ public class PicDisplay {
    						}
    					 });
    					 f.add(p);
-   					 
+   					 f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
    					 f.pack();
    					 f.setVisible(true);
    					 

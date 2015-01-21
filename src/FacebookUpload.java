@@ -51,7 +51,7 @@ public class FacebookUpload {
 		if(facebookMessage==null){
 			File photoFile = new File(photoPath);
 			try {
-				facebookMessage=WriteExifMetadata.readExifMetadata(photoFile);
+				facebookMessage=WriteData.readExifMetadata(photoFile);
 			} catch (ImageReadException | ImageWriteException | IOException
 					| ParseException e) {
 				// TODO Auto-generated catch block

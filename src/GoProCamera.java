@@ -32,9 +32,9 @@ public class GoProCamera extends Camera {
 	private String password;
 	private String url;
 	
-	private boolean done;
+	//private boolean done;
 	private boolean pause;
-	private Dimension size;
+	//private Dimension size;
 	private static Button pauseB=new Button(0,0,0,0,"UI/pauseUP.png","UI/pauseP.png");
 	private static Button stopB=new Button(0,0,0,0,"UI/stop.png",null);
 	
@@ -44,8 +44,8 @@ public class GoProCamera extends Camera {
 	 */
 	public GoProCamera(String password) {
 		this.password = password;
-		this.url="http://10.5.5.9";
-		this.size=new Dimension(640,480);
+		this.url="http://10.5.5.9/";
+		//this.size=new Dimension(640,480);
 	}
 	
 	/**
@@ -55,50 +55,41 @@ public class GoProCamera extends Camera {
 	 */
 	public void changeMode(int mode) throws Exception{
 		if(mode==0){
-			sendCommand("http://10.5.5.9/camera/CM?t="+password+"&p=%00");
+			sendCommand(url+"camera/CM?t="+password+"&p=%00");
 		}
 		if(mode==1){
-			sendCommand("http://10.5.5.9/camera/CM?t="+password+"&p=%01");
+			sendCommand(url+"camera/CM?t="+password+"&p=%01");
 		}
 		
 	}
 	
 
 	public void turnON() throws Exception{
-		sendCommand("http://10.5.5.9/bacpac/PW?t="+password+"&p=%01");
+		sendCommand(url+"bacpac/PW?t="+password+"&p=%01");
 	}
 	
 	public void turnOFF() throws Exception{
-		sendCommand("http://10.5.5.9/bacpac/PW?t="+password+"&p=%00");
+		sendCommand(url+"bacpac/PW?t="+password+"&p=%00");
 	}
 
 	
 	public void startCapture() throws Exception{
-		sendCommand("http://10.5.5.9/bacpac/SH?t="+password+"&p=%01");
+		sendCommand(url+"bacpac/SH?t="+password+"&p=%01");
 	
 	}
 	
 	public void stopCapture() throws Exception{	
-		sendCommand("http://10.5.5.9/bacpac/SH?t="+password+"&p=%00");
+		sendCommand(url+"bacpac/SH?t="+password+"&p=%00");
 	}
 	
 	public void deleteAllFile() throws Exception{
 		//http://10.5.5.9/camera/DL?t=Nadav2471987
-		sendCommand("http://10.5.5.9/camera/DA?t="+password);
+		sendCommand(url+"camera/DA?t="+password);
 	}
 	
 	public void downloadFiles(String path,String fileType){
-	     String webUrl = "http://10.5.5.9:8080/videos/DCIM/999GOPRO"; //100GOPRO IS SPECIFIED HERE, JUST CHANGE 100 BY THE NUMBER OF THE FOLDER WHER ALL THE PICS ARE.
-	        //final String outputFolder = System.getProperty("user.home") + File.separatorChar + "Pictures" + File.separatorChar + "gopro" + File.separatorChar;
-	        
-	      /*   File outputFolderF = new File(outputFolder);
-	        if (!outputFolderF.exists()) {
-	          if (!(outputFolderF.mkdirs())) {
-	            throw new RuntimeException("Unable to ensure folder exists:" + outputFolder);
-	          }
-	          System.out.println("Created download folder:" + outputFolder);
-	        }*/
-	     		
+	     String webUrl = "http://10.5.5.9:8080/videos/DCIM/999GOPRO"; //999GOPRO IS SPECIFIED HERE, JUST CHANGE 100 BY THE NUMBER OF THE FOLDER WHER ALL THE PICS ARE.
+	    	     		
 	        try {
 	        	
 	           Document doc = Jsoup.connect(webUrl).timeout(25 * 1_000).get();
@@ -116,11 +107,9 @@ public class GoProCamera extends Camera {
 	                Response resultImageResponse = Jsoup.connect(link.absUrl("href")).ignoreContentType(true).maxBodySize(0).execute();
 	                OutputStream out = new BufferedOutputStream(new FileOutputStream(destFile), 1024*1024*25);
 	                out.write(resultImageResponse.bodyAsBytes());
-	                out.flush();
-	                
+	                out.flush();	                
 	                System.out.println("Downloaded\t" + destFile);
-	                
-	              
+	                	              
 	            }
 	        }
 	      
@@ -131,17 +120,13 @@ public class GoProCamera extends Camera {
 	        	System.out.println("exception "+e.getMessage());
 	        }
 	        
-	        
-		
 	}
 	
 	
 	private boolean sendCommand(String url) throws Exception{
 		URL command = new URL(url);
-        URLConnection yc = command.openConnection();
-        BufferedReader in = new BufferedReader(
-                                new InputStreamReader(
-                                yc.getInputStream()));
+        URLConnection conn = command.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         String inputLine;
 
         while ((inputLine = in.readLine()) != null) //{}
@@ -228,7 +213,7 @@ public class GoProCamera extends Camera {
 		return 1;
 	}
 	
-	private void setButonns(){
+/*	private void setButonns(){
 		pauseB.addMouseListener(new MouseAdapter(){
 	 		@Override
 	         public void mouseClicked(MouseEvent e) {
@@ -253,10 +238,10 @@ public class GoProCamera extends Camera {
 	 		@Override
 	         public void mouseClicked(MouseEvent e) {
 	 			
-	 			done=true;
+	 		//	done=true;
 	 			
 	 		}});
-	}
+	}*/
 	
 
 }

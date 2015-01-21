@@ -5,9 +5,12 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
@@ -28,15 +31,16 @@ import com.github.sarxos.webcam.Webcam;
 
 
 public class App {
-	public static final String IMGFORMAT = "jpg";
+	public static final String IMGFORMAT = "jpeg";
 	public static final String MEDIADIR = "media/";
 	public static final int WIDTH=800;
 	public static final int HEIGHT=600;
-	public static final int CAMNUM = 2; //nadav changed
+	public static final int CAMNUM = 1; //nadav changed
 	public static Camera[] CAMERAS;
 	public static int currImgNum;
 	public static final String MEDNAME="DAC";
 	public static User currUser;	
+	public static boolean terminated = false;
 	
 	
 	public static void main(String[] args) {
@@ -46,6 +50,12 @@ public class App {
             	
             	initAll();
                 startGui();
+                new Thread(new Runnable(){
+      				 public void run() {
+      					EventHandler.setEventsListeners();
+      					EventHandler.simulateEvents();
+      				 }
+      			}).start();
             }
         });	
 		
@@ -53,6 +63,15 @@ public class App {
 	
 	private static void initAll(){
 		CAMERAS = new Camera[CAMNUM];
+		
+		/*List<Webcam> cams = Webcam.getWebcams();
+		for (int i=0; i< cams.size(); i++){
+			if ((cams.get(i)).getName().equals("Microsoft LifeCam VX-2000 0")){
+				CAMERAS[0] = new WCamera(cams.get(i), new Dimension(640,480),IMGFORMAT);
+				break;
+			}
+		}*/
+		
 		CAMERAS[0] = new WCamera(Webcam.getDefault(), new Dimension(640,480),IMGFORMAT);
 		if (CAMNUM>1)CAMERAS[1]= new GoProCamera("Nadav2471987");
 		currUser = new User();
@@ -62,10 +81,20 @@ public class App {
 	public static void startGui(){
 		
 		
-		JFrame frame = new JFrame();
+		final JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(new MainScreen().getPanel());       
 		frame.pack();
+		frame.addWindowListener(new WindowAdapter(){
+
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+				terminated=true;
+				frame.dispose();
+				
+			}
+			
+		});
 		frame.setVisible(true); 
 
 		

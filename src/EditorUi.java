@@ -38,25 +38,12 @@ public class EditorUi {
 	private int imgY;
 	
 	
-	
-	public static void ma(String[] args) throws IOException{
-
-		
-	//	File img = new File("467.jpg");
-		//BufferedImage buf = ImageIO.read(img);
-		
-		EditorUi edit = new EditorUi("DAC1.jpg");
-		
-		edit.edit();
-		
-		
-	}
-	
 	public void edit(){
 		JFrame f = new JFrame();
 		JPanel p = getPanel();	
 		p.add(cropRect);
 		f.add(p);
+		f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		f.pack();
 		setButtons();
 		cropRect.setVisible(false);
@@ -160,8 +147,6 @@ private class EditorPanel extends MyPanel{
 
 	@Override
 	protected void addComponents() {
-		
-		//setButtons();
 		
 		add(save);
 		add(facebook);

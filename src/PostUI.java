@@ -2,6 +2,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -14,7 +15,7 @@ public class PostUI {
 	private final static String FACEBOOK = "facebook";
 	private final static String YOUTUBE = "youtube";
 	private final static int FONTSIZE = 18;
-	private final static String FONTSTYLE = "Calibri";
+	private final static String FONTSTYLE = "Ariel";
 	private final static int PANEW = 450;
 	private final static int PANEH = 170;
 	
@@ -51,9 +52,7 @@ public class PostUI {
 				            	f.dispose();
 				            }
 				        }, 
-				        700);
-    			
-    			
+				        700);			
     	               
     		}
     	});
@@ -61,7 +60,7 @@ public class PostUI {
     	
     	p.add(pane);
     	f.add(p);
-    	f.setResizable(false);
+    	f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     	f.pack();f.setVisible(true);
 	}
 	
@@ -81,11 +80,20 @@ public class PostUI {
 	
 	public static void share(String path, String network, String post){
 		if (App.isImage(path)){
+			//Ariela
 			if (network.equals(FACEBOOK))FacebookUpload.sharePhotoOnFacebook(path, post);
 	    	
 		}
-		/**else{
-			if (network.equals(FACEBOOK))FacebookUpload.shareVideoOnFacebook(path, post);
+		else{
+			if (network.equals(FACEBOOK))
+				try {
+					
+					//Ariela
+					FacebookUpload.UploadVideoToFacebook(path, post);
+
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			else if (network.equals(YOUTUBE)){
 				String title = null;
 				String content=null;
@@ -95,9 +103,11 @@ public class PostUI {
 					title = str[0];
 					if (str.length >=2)content=str[1];
 				}
-				shareVideoOnYoutube(path, title,content); 
+				
+				//Ariela
+				UploadVideo.shareVideoOnYoutube(path, title, content);
 			}
-		}**/
+		}
 	}
 	
 	

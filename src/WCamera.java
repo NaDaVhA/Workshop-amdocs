@@ -31,43 +31,36 @@ public class WCamera extends Camera{
 	private long pausedTime=0;
 	private double frameRate = 50;
 	
-	
-	
-	
 	WCamera(Webcam cam, Dimension size,String captureFormat){
 		this.cam = cam;
 		this.size = size;
 		this.captureFormat = captureFormat;
+		cam.setViewSize(size);
+		cam.open();
 	}
-	
-	
-	/*public static void main(String[] args){
-		WCamera cam = new WCamera(Webcam.getDefault(), new Dimension(640,480),"png");
-		cam.captureVid("lala.avi",50);
-	}*/
+
 	public Webcam getCam(){
 		return cam;
 	}
 	@Override
 	public int capturePic(String path) {
-		cam.setViewSize(size);
-		cam.open();
+		
 		try {
 		
 			ImageIO.write(cam.getImage(), captureFormat, new File(path));
-			WriteExifMetadata.updateExifMetadata(path);
+			
 		} catch (IOException e) {
 			
 			return 0;
 		}
-		cam.close();
+		
 		return 1;
 	}
 
 	@Override
 	public int captureVid(String path) {
 		
-
+		cam.close();
 		final WebcamPanel panel = new WebcamPanel(cam, size, false);
 		panel.setFPSDisplayed(true);
 		panel.setFillArea(true);
@@ -90,7 +83,7 @@ public class WCamera extends Camera{
 		
 		final IMediaWriter writer = ToolFactory.makeWriter(path);
 		writer.addVideoStream(0, 0, ICodec.ID.CODEC_ID_MPEG4, size.width/2, size.height/2);
-		//writer.addVideoStream(0, 0, ICodec.ID., size.width/2, size.height/2);
+
 		long startTime = System.nanoTime();
 		
 		f.addWindowListener(new WindowAdapter(){
@@ -121,9 +114,34 @@ public class WCamera extends Camera{
 		writer.close();
 		f.dispose();
 		panel.stop();
+		cam.open();
 		return 1;
 	}
-	
+public int captureLimitVid(String path, int secondsToRun) {
+		
+		final IMediaWriter writer = ToolFactory.makeWriter(path);
+		writer.addVideoStream(0, 0, ICodec.ID.CODEC_ID_MPEG4, size.width/2, size.height/2);
+		long startTime = System.nanoTime();
+		
+
+		 for (int i = 0; i < (secondsToRun*frameRate)/6; i++){
+			
+				BufferedImage shot = cam.getImage();
+				BufferedImage bgrScreen = convertToType(shot, BufferedImage.TYPE_3BYTE_BGR);
+				writer.encodeVideo(0, bgrScreen, System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
+				
+				try {
+					Thread.sleep((long) (1000 / frameRate));
+				} 
+				catch (InterruptedException e) {
+					return 0;
+				}
+			
+		}
+		writer.close();
+
+		return 1;
+	}
 	private void setButonns(){
 		pauseB.addMouseListener(new MouseAdapter(){
 	 		@Override
